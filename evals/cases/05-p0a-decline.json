@@ -1,0 +1,1 @@
+{"id":"p0a-decline","scenario":"p0a_decline","required_assertions":["declined","no_workspace_write","p0b_not_started"]}

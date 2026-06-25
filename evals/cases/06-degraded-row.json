@@ -1,0 +1,1 @@
+{"id":"degraded-row","scenario":"degraded_row","required_assertions":["degraded","valid_row_retained","bad_row_quarantined","no_false_tombstone"]}

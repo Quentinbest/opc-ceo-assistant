@@ -1,0 +1,1 @@
+{"id":"stale-within-limit","scenario":"stale_within_limit","required_assertions":["boundary_allowed","run_created","top_present"]}

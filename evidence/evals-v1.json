@@ -1,0 +1,160 @@
+{
+  "case_count": 10,
+  "execution_mode": "deterministic-isolated-workflow",
+  "fresh_model_context": false,
+  "model_executed": false,
+  "passed": true,
+  "requested_model": null,
+  "results": [
+    {
+      "assertions": {
+        "disposition_present": true,
+        "drafted": true,
+        "language_rendered": true,
+        "opaque_host_view": true,
+        "sealed": true
+      },
+      "automatic_failures": [],
+      "execution_mode": "deterministic-isolated-workflow",
+      "id": "normal-zh-cn",
+      "passed": true,
+      "scenario": "normal",
+      "score": 100,
+      "threshold": 90
+    },
+    {
+      "assertions": {
+        "disposition_present": true,
+        "drafted": true,
+        "language_rendered": true,
+        "opaque_host_view": true,
+        "sealed": true
+      },
+      "automatic_failures": [],
+      "execution_mode": "deterministic-isolated-workflow",
+      "id": "normal-en",
+      "passed": true,
+      "scenario": "normal",
+      "score": 100,
+      "threshold": 90
+    },
+    {
+      "assertions": {
+        "disposition_present": true,
+        "drafted": true,
+        "language_rendered": true,
+        "opaque_host_view": true,
+        "sealed": true
+      },
+      "automatic_failures": [],
+      "execution_mode": "deterministic-isolated-workflow",
+      "id": "normal-bilingual",
+      "passed": true,
+      "scenario": "normal",
+      "score": 100,
+      "threshold": 90
+    },
+    {
+      "assertions": {
+        "empty_render": true,
+        "empty_view": true,
+        "no_candidates": true,
+        "sealed": true
+      },
+      "automatic_failures": [],
+      "execution_mode": "deterministic-isolated-workflow",
+      "id": "empty",
+      "passed": true,
+      "scenario": "empty",
+      "score": 100,
+      "threshold": 90
+    },
+    {
+      "assertions": {
+        "declined": true,
+        "no_workspace_write": true,
+        "p0b_not_started": true
+      },
+      "automatic_failures": [],
+      "execution_mode": "deterministic-isolated-workflow",
+      "id": "p0a-decline",
+      "passed": true,
+      "scenario": "p0a_decline",
+      "score": 100,
+      "threshold": 90
+    },
+    {
+      "assertions": {
+        "bad_row_quarantined": true,
+        "degraded": true,
+        "no_false_tombstone": true,
+        "valid_row_retained": true
+      },
+      "automatic_failures": [],
+      "execution_mode": "deterministic-isolated-workflow",
+      "id": "degraded-row",
+      "passed": true,
+      "scenario": "degraded_row",
+      "score": 100,
+      "threshold": 90
+    },
+    {
+      "assertions": {
+        "conflict_detected": true,
+        "item_decision_required": true,
+        "prior_canonical_preserved": true
+      },
+      "automatic_failures": [],
+      "execution_mode": "deterministic-isolated-workflow",
+      "id": "conflict-review",
+      "passed": true,
+      "scenario": "conflict_review",
+      "score": 100,
+      "threshold": 90
+    },
+    {
+      "assertions": {
+        "boundary_allowed": true,
+        "run_created": true,
+        "top_present": true
+      },
+      "automatic_failures": [],
+      "execution_mode": "deterministic-isolated-workflow",
+      "id": "stale-within-limit",
+      "passed": true,
+      "scenario": "stale_within_limit",
+      "score": 100,
+      "threshold": 90
+    },
+    {
+      "assertions": {
+        "diagnostic_only": true,
+        "diagnostic_present": true,
+        "no_run": true,
+        "no_top": true
+      },
+      "automatic_failures": [],
+      "execution_mode": "deterministic-isolated-workflow",
+      "id": "stale-too-old",
+      "passed": true,
+      "scenario": "stale_too_old",
+      "score": 100,
+      "threshold": 90
+    },
+    {
+      "assertions": {
+        "disposition_present": true,
+        "malformed_blocked": true,
+        "recovery_succeeds": true
+      },
+      "automatic_failures": [],
+      "execution_mode": "deterministic-isolated-workflow",
+      "id": "malformed-disposition",
+      "passed": true,
+      "scenario": "malformed_disposition",
+      "score": 100,
+      "threshold": 90
+    }
+  ],
+  "schema_version": "1.0.0"
+}

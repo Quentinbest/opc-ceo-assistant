@@ -1,0 +1,1 @@
+{"id":"malformed-disposition","scenario":"malformed_disposition","required_assertions":["malformed_blocked","recovery_succeeds","disposition_present"]}

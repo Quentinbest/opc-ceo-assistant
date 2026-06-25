@@ -1,0 +1,4 @@
+interface:
+  display_name: "OPC CEO Office"
+  short_description: "Import the OPC workbook and run the sealed daily CEO decision loop"
+  default_prompt: "Use $opc-ceo-office to refresh my OPC operating workbook and prepare today's bounded CEO briefing."

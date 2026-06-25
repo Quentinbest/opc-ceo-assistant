@@ -1,0 +1,110 @@
+{
+  "diagnostics": [],
+  "drive": {
+    "copied_workbook_deleted": true,
+    "modified_time": "2026-06-20T01:10:36.196Z",
+    "revision_after": "1",
+    "revision_before": "1",
+    "stable_during_export": true
+  },
+  "kind": "copied-workbook-canary",
+  "named_ranges": [
+    "opc_contracts_v1",
+    "opc_pipeline_v1",
+    "opc_priorities_v1",
+    "opc_projects_v1",
+    "opc_receivables_v1",
+    "opc_risks_v1"
+  ],
+  "privacy": {
+    "raw_cells_entered_host_context": false,
+    "receipt_contains_cell_values": false,
+    "source_was_header_only": true
+  },
+  "runs": [
+    {
+      "briefing_apply_outcome": "applied",
+      "briefing_outcome": "no_candidates",
+      "import_outcome": "applied",
+      "initialized": "initialized",
+      "render_outcome": "sealed",
+      "review_counts": {
+        "batch_safe": 0,
+        "conflicts": 0,
+        "quarantined": 0,
+        "tombstones": 0
+      },
+      "run": 1,
+      "stage_outcome": "staged_clean",
+      "workspace_outcome": "healthy"
+    },
+    {
+      "briefing_apply_outcome": "applied",
+      "briefing_outcome": "no_candidates",
+      "import_outcome": "applied",
+      "initialized": "initialized",
+      "render_outcome": "sealed",
+      "review_counts": {
+        "batch_safe": 0,
+        "conflicts": 0,
+        "quarantined": 0,
+        "tombstones": 0
+      },
+      "run": 2,
+      "stage_outcome": "staged_clean",
+      "workspace_outcome": "healthy"
+    },
+    {
+      "briefing_apply_outcome": "applied",
+      "briefing_outcome": "no_candidates",
+      "import_outcome": "applied",
+      "initialized": "initialized",
+      "render_outcome": "sealed",
+      "review_counts": {
+        "batch_safe": 0,
+        "conflicts": 0,
+        "quarantined": 0,
+        "tombstones": 0
+      },
+      "run": 3,
+      "stage_outcome": "staged_clean",
+      "workspace_outcome": "healthy"
+    },
+    {
+      "briefing_apply_outcome": "applied",
+      "briefing_outcome": "no_candidates",
+      "import_outcome": "applied",
+      "initialized": "initialized",
+      "render_outcome": "sealed",
+      "review_counts": {
+        "batch_safe": 0,
+        "conflicts": 0,
+        "quarantined": 0,
+        "tombstones": 0
+      },
+      "run": 4,
+      "stage_outcome": "staged_clean",
+      "workspace_outcome": "healthy"
+    },
+    {
+      "briefing_apply_outcome": "applied",
+      "briefing_outcome": "no_candidates",
+      "import_outcome": "applied",
+      "initialized": "initialized",
+      "render_outcome": "sealed",
+      "review_counts": {
+        "batch_safe": 0,
+        "conflicts": 0,
+        "quarantined": 0,
+        "tombstones": 0
+      },
+      "run": 5,
+      "stage_outcome": "staged_clean",
+      "workspace_outcome": "healthy"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "source_sha256": "9e20c4c6a2a28ec4f2af898eef88f74b3ec22ca38db8c9e27d8bb4034f2a47ef",
+  "spreadsheet_id_hash": "sha256:5cb231af92d458d560ba5c555ec14494c9c1d5b4e8e5c3fc43b967650f43a0a8",
+  "status": "passed"
+}

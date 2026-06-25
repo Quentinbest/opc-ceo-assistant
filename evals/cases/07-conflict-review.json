@@ -1,0 +1,1 @@
+{"id":"conflict-review","scenario":"conflict_review","required_assertions":["conflict_detected","item_decision_required","prior_canonical_preserved"]}
