@@ -1,0 +1,87 @@
+{
+  "classifications": {
+    "evidence": {
+      "mode": "immutable_successor",
+      "required_fields": ["record_id", "stable_id", "revision", "supersedes"],
+      "summary": "Business evidence must be superseded by a new immutable revision."
+    },
+    "p0_imported": {
+      "mode": "external_authority",
+      "required_fields": ["record_id"],
+      "summary": "P0 imported records remain owned by the Google Sheets source until explicit ownership migration."
+    },
+    "working": {
+      "mode": "revisioned_in_place",
+      "required_fields": ["record_id", "revision"],
+      "summary": "Working records may update in place only with a monotonically increasing revision."
+    }
+  },
+  "record_types": {
+    "contract": {
+      "classification": "p0_imported",
+      "domain_write_authority": false,
+      "owner": "google_sheets"
+    },
+    "delivery_record": {
+      "classification": "evidence",
+      "domain_write_authority": true,
+      "owner": "opc_project_ops"
+    },
+    "expense": {
+      "classification": "evidence",
+      "domain_write_authority": true,
+      "owner": "opc_finance_tax"
+    },
+    "invoice": {
+      "classification": "evidence",
+      "domain_write_authority": true,
+      "owner": "opc_finance_tax"
+    },
+    "lead": {
+      "classification": "working",
+      "domain_write_authority": true,
+      "owner": "opc_sales_pipeline"
+    },
+    "payment": {
+      "classification": "evidence",
+      "domain_write_authority": true,
+      "owner": "opc_finance_tax"
+    },
+    "pipeline": {
+      "classification": "p0_imported",
+      "domain_write_authority": false,
+      "owner": "google_sheets"
+    },
+    "priority": {
+      "classification": "p0_imported",
+      "domain_write_authority": false,
+      "owner": "google_sheets"
+    },
+    "project": {
+      "classification": "p0_imported",
+      "domain_write_authority": false,
+      "owner": "google_sheets"
+    },
+    "quote": {
+      "classification": "evidence",
+      "domain_write_authority": true,
+      "owner": "opc_sales_pipeline"
+    },
+    "receivable": {
+      "classification": "p0_imported",
+      "domain_write_authority": false,
+      "owner": "google_sheets"
+    },
+    "risk": {
+      "classification": "p0_imported",
+      "domain_write_authority": false,
+      "owner": "google_sheets"
+    },
+    "task": {
+      "classification": "working",
+      "domain_write_authority": true,
+      "owner": "opc_project_ops"
+    }
+  },
+  "version": "1.0.0"
+}

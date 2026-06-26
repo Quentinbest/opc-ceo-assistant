@@ -94,3 +94,61 @@ def test_skill_installer_detects_drift(tmp_path: Path) -> None:
         install_skill(project_root, codex_home, check=True, install_tool=False)["outcome"]
         == "drift_blocked"
     )
+
+
+def test_skill_installer_can_include_p1_sales_skill(tmp_path: Path) -> None:
+    project_root = Path(__file__).parents[2]
+    codex_home = tmp_path / ".codex"
+
+    installed = install_skill(
+        project_root,
+        codex_home,
+        install_tool=False,
+        include_p1=True,
+    )
+
+    assert installed["outcome"] == "installed"
+    assert set(installed["skills"]) == {"opc-ceo-office", "opc-sales-pipeline"}
+    sales_skill = codex_home / "skills" / "opc-sales-pipeline" / "SKILL.md"
+    assert sales_skill.is_file()
+    assert "no write authority" in sales_skill.read_text(encoding="utf-8")
+
+
+def test_skill_installer_updates_from_p0_to_p1_bundle(tmp_path: Path) -> None:
+    project_root = Path(__file__).parents[2]
+    codex_home = tmp_path / ".codex"
+
+    assert install_skill(project_root, codex_home, install_tool=False)["outcome"] == "installed"
+    updated = install_skill(
+        project_root,
+        codex_home,
+        update=True,
+        install_tool=False,
+        include_p1=True,
+    )
+
+    assert updated["outcome"] == "updated"
+    assert (codex_home / "skills" / "opc-sales-pipeline" / "SKILL.md").is_file()
+    backups = codex_home / "backups" / "opc-skills"
+    assert list(backups.glob("*/opc-ceo-office/SKILL.md"))
+
+
+def test_skill_installer_reads_legacy_manifest(tmp_path: Path) -> None:
+    project_root = Path(__file__).parents[2]
+    codex_home = tmp_path / ".codex"
+
+    assert install_skill(project_root, codex_home, install_tool=False)["outcome"] == "installed"
+    state_root = codex_home / "opc-ceo-installs"
+    new_state = state_root / "opc-skills.json"
+    legacy_state = state_root / "opc-ceo-office.json"
+    state = json.loads(new_state.read_text(encoding="utf-8"))
+    legacy_state.write_text(
+        json.dumps({"files": state["skills"]["opc-ceo-office"]}),
+        encoding="utf-8",
+    )
+    new_state.unlink()
+
+    assert (
+        install_skill(project_root, codex_home, check=True, install_tool=False)["outcome"]
+        == "up_to_date"
+    )

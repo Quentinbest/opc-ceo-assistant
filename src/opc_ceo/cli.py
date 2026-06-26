@@ -88,6 +88,7 @@ def _parser() -> argparse.ArgumentParser:
     install = commands.add_parser("install")
     install.add_argument("--check", action="store_true")
     install.add_argument("--update", action="store_true")
+    install.add_argument("--include-p1", action="store_true")
     return parser
 
 
@@ -239,6 +240,7 @@ def _execute(args: argparse.Namespace) -> tuple[int, dict[str, Any]]:
             check=args.check,
             update=args.update,
             install_tool=not bool(os.environ.get("OPC_SKIP_UV_TOOL_INSTALL")),
+            include_p1=args.include_p1,
         )
         return (0 if result["outcome"] in {"installed", "up_to_date", "updated"} else 1), _envelope(
             "install",
