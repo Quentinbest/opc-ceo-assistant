@@ -1,0 +1,4 @@
+interface:
+  display_name: "OPC Sales Pipeline"
+  short_description: "Draft bounded sales follow-up and quote-review recommendations"
+  default_prompt: "Use $opc-sales-pipeline to prepare bounded sales follow-up options from approved OPC workspace evidence."

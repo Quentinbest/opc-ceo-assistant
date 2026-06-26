@@ -1,5 +1,24 @@
 # TODOS
 
+## P1 Start Call
+
+P1 may start now, but only in this order:
+
+1. Define domain record version semantics against representative real P0 records.
+2. Implement one domain Skill at a time.
+3. Start domain implementation with `opc-sales-pipeline`.
+4. Keep `opc-legal-risk` and `opc-finance-tax` behind stricter evidence and professional-boundary review.
+5. Do not grant any domain Skill write authority until ownership migration, approval gates, and cross-Skill diagnostics are explicit and tested.
+
+This is a go for P1 entry, not a go for broad autonomous mutation workflows.
+
+Implemented P1 entry slice:
+
+- Added machine-readable domain record version policy.
+- Added `opc-sales-pipeline` as the first P1 Skill surface.
+- Added `opc-workspace install --include-p1` to install the P1 Skill alongside `opc-ceo-office`.
+- Preserved the no-write-authority boundary for P0 imported records.
+
 ## Skills
 
 ### Define domain record version semantics
@@ -8,7 +27,7 @@
 
 **Why:** Prevent new quotes, contracts, invoices, or delivery records from overwriting business evidence or invalidating cross-Skill references.
 
-**Context:** P0 treats Google Sheets as the authoritative writer for six imported types and Workspace as authoritative for Briefs/decisions. Complete this design against real P0 records before any P1 domain Skill receives write authority; define explicit ownership migration, prohibit dual writers, and do not introduce full event sourcing unless evidence later justifies it.
+**Context:** This is the P1 entry task. P0 treats Google Sheets as the authoritative writer for six imported types and Workspace as authoritative for Briefs/decisions. Complete this design against real P0 records before any P1 domain Skill receives write authority; define explicit ownership migration, prohibit dual writers, and do not introduce full event sourcing unless evidence later justifies it.
 
 **Effort:** M
 **Priority:** P1
@@ -20,7 +39,7 @@
 
 **Why:** Complete the five-Skill operating model so each domain can maintain its own structured records and handoffs instead of remaining a read-only input to CEO Office.
 
-**Context:** P0 deliberately excludes empty domain Skill stubs. Start P1 only after `opc-ceo-office` passes its full test/eval suite and five copied-workbook canary runs; implement and forward-test one domain at a time, preserving the Workspace contract, ownership migration, approval gates, and cross-Skill diagnostics. Domain-specific execution drafts such as follow-up or reminder drafts belong here, never in P0 CEO Office.
+**Context:** P0 deliberately excludes empty domain Skill stubs. `opc-ceo-office` now has passing local verification and checked-in connector/live/eval/benchmark/canary evidence, so domain work may begin after domain record version semantics are approved. Implement and forward-test one domain at a time, preserving the Workspace contract, ownership migration, approval gates, and cross-Skill diagnostics. Start with `opc-sales-pipeline`, because it reuses the existing pipeline/receivable operating loop and carries lower regulated-advice risk than legal or tax workflows. Domain-specific execution drafts such as follow-up or reminder drafts belong here, never in P0 CEO Office.
 
 **Effort:** L
 **Priority:** P1

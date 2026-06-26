@@ -31,6 +31,7 @@ packages = ["src/opc_ceo"]
 
 [tool.hatch.build.targets.wheel.force-include]
 "skills/opc-ceo-office" = "opc_ceo/bundled_skill/opc-ceo-office"
+"skills/opc-sales-pipeline" = "opc_ceo/bundled_skill/opc-sales-pipeline"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

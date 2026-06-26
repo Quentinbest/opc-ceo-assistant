@@ -192,6 +192,28 @@ def test_execute_install_outcomes(
     assert result["wrote_state"] is (outcome in {"installed", "updated"})
 
 
+def test_execute_install_can_include_p1_skills(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    observed: dict[str, object] = {}
+
+    def fake_install_skill(*args: object, **kwargs: object) -> dict[str, object]:
+        observed.update(kwargs)
+        return {"outcome": "installed", "diagnostics": [], "skills": ["opc-ceo-office"]}
+
+    monkeypatch.setenv("CODEX_HOME", str(tmp_path / "codex"))
+    monkeypatch.setenv("OPC_SKIP_UV_TOOL_INSTALL", "1")
+    monkeypatch.setattr(cli, "install_skill", fake_install_skill)
+
+    code, result = cli._execute(
+        parsed(["install", "--include-p1", "--workspace", str(tmp_path / "w")])
+    )
+
+    assert code == 0
+    assert result["outcome"] == "installed"
+    assert observed["include_p1"] is True
+
+
 def test_execute_rejects_unknown_command() -> None:
     with pytest.raises(AssertionError, match="unreachable"):
         cli._execute(argparse.Namespace(command="unknown", workspace=None))
